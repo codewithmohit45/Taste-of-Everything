@@ -1,0 +1,19 @@
+
+Project 2 : Taste of Everything
+
+1. user Sign up
+2. user/Employee login
+3. user can select Category.
+4. user can select Food Item from selected Category.
+5. user can add the food item into cart.
+6. user can find food item through search functionality.
+7. user can view the cart.
+8. user can also remove food item from cart.
+9. user can chekout their cart and place the order.
+10.user can see the order history.
+11.Employee can change the status of an order as shipped.
+12.user/Employee can logout their session.
+13.user/Employee can navigate from one functionality to another functionality with    the help of navigation bar.
+
+
+
