@@ -5,38 +5,39 @@
             <h1 class="h3 mb-3 fw-normal">Create your Account</h1>
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="text" class="form-control" name="name" id="name" [(ngModel)]="customer.customerName">
                 <label for="floatingInput">Name</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" name="email" id="email" [(ngModel)]="customer.customerEmail">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="password" class="form-control" name="password" id="password" [(ngModel)]="customer.customerPassword">
                 <label for="floatingInput">Password</label>
             </div>
 
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Contact</label>
+                <input type="number" class="form-control" name="contact" id="contact" [(ngModel)]="customer.customerContact">
+                <label for=" floatingInput ">Contact</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 ">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" (click)="setGender('Male')">
                     <label class="form-check-label" for="inlineRadio1">Male</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" (click)="setGender('Female')">
                     <label class="form-check-label" for="inlineRadio2">Female</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="other">
-                    <label class="form-check-label" for="inlineRadio3">Other</label>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" (click)="setGender('Other')">
+                    <label class="form-check-label" for="inlineRadio2">Other</label>
                 </div>
             </div>
-            <!-- <button type="submit" class="btn btn-primary">Signup</button> -->
-            <a routerLink="/signup" class="btn btn-success">Sign-up</a>
+
+            <button type="submit " class="btn btn-primary" (click)="addCustomer()">Signup</button>
+
         </form>
     </main>
 
