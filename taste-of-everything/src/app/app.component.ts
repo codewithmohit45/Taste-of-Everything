@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CustomerService } from './service/customer.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'taste-of-everything';
 
-  flag: boolean;
-
+  constructor(private service: CustomerService, private router: Router) { }
+  public logout() {
+    this.service.isAuthenticated = false;
+    sessionStorage.removeItem("customerName");
+    this.router.navigate(["/login"]);
+  }
 }

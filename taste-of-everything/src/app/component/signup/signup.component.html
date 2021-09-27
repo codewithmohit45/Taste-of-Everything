@@ -1,8 +1,12 @@
 <div class="container">
     <main class="text-center">
-        <form class="form-signin">
+        <form class="form-signin" (ngSubmit)="onSubmit(signupForm)" #signupForm="ngForm">
             <img class="mb-4 mt-4" src="../../assets/images/images.png" alt="" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Create your Account</h1>
+
+            <div class="alert alert-warning" role="alert" *ngIf="isValidForm">
+                Please fill all the fields
+            </div>
 
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="name" id="name" [(ngModel)]="customer.customerName">
@@ -36,7 +40,7 @@
                 </div>
             </div>
 
-            <button type="submit " class="btn btn-primary" (click)="addCustomer()">Signup</button>
+            <button type="submit" class="btn btn-primary">Signup</button>
 
         </form>
     </main>

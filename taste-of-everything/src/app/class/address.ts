@@ -1,6 +1,6 @@
 export class Address {
 
     addressId: number;
-    address: String;
+    address: string;
     customerId: number;
 }

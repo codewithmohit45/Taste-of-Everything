@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Customer } from './customer';
+import { Customer } from '../class/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,14 @@ import { Customer } from './customer';
 export class CustomerService {
   customerList: Customer[];
   validCustomer: Customer[];
+  isAuthenticated: boolean;
+
   private url: string;
   constructor(private http: HttpClient) {
     this.url = "http://localhost:9000/customer";
     this.customerList = [];
+    this.isAuthenticated = false;
+
   }
 
   // public addCustomer(customer: Customer): Observable<Customer> {

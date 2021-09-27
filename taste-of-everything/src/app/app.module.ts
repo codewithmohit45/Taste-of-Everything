@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { CategoryComponent } from './category/category.component';
-import { ItemComponent } from './item/item.component';
-import { CustomerService } from './customer.service';
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
+import { CategoryComponent } from './component/category/category.component';
+import { ItemComponent } from './component/item/item.component';
+import { CustomerService } from './service/customer.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 @NgModule({

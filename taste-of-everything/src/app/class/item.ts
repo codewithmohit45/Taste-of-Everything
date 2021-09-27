@@ -1,6 +1,6 @@
 export class Item {
     itemId: number;
-    itemName: String;
+    itemName: string;
     itemPrice: number;
     categoryId: number;
 }
