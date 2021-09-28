@@ -9,14 +9,26 @@ import { CategoryComponent } from './component/category/category.component';
 import { ItemComponent } from './component/item/item.component';
 import { CustomerService } from './service/customer.service';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeedashboardComponent } from './employeedashboard/employeedashboard.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { DeleteCategoryComponent } from './delete-category/delete-category.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { EmployeeLoginComponent } from './employee-login/employee-login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     CategoryComponent,
-    ItemComponent
+    ItemComponent,
+    EmployeedashboardComponent,
+    AddCategoryComponent,
+    DeleteCategoryComponent,
+    CustomerLoginComponent,
+    EmployeeLoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http'
     HttpClientModule
   ],
   providers: [CustomerService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,EmployeedashboardComponent]
+
 })
 export class AppModule { }
