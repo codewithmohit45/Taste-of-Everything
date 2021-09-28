@@ -1,0 +1,37 @@
+<div class="container">
+    <main class="text-center">
+        <form class="form-signin" (ngSubmit)="(onSubmit(loginForm))" #loginForm="ngForm">
+            <img class="mb-4 mt-4" src="../../assets/images/images.png" alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+            <div class="alert alert-danger" role="alert" *ngIf="isValidForm">
+                Please fill all the fields
+            </div>
+
+            <div class="alert alert-danger" role="alert" *ngIf="isValidCredential">
+                Invalid Email or Password
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email" id="floatingInput" [(ngModel)]="inputEmail" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" required>
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="password" id="floatingPassword" [(ngModel)]="inputPassword" required>
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" (click)="setType('customer')" checked>
+                    <label class="form-check-label" for="inlineRadio1">Customer</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" (click)="setType('employee')">
+                    <label class="form-check-label" for="inlineRadio2">Employee</label>
+                </div>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2020–2021</p>
+        </form>
+    </main>
+</div>

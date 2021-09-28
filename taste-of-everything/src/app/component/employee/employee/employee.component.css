@@ -1,0 +1,12 @@
+.card {
+    width: 25rem;
+}
+
+.card img {
+    height: 20rem;
+    width: 25rem;
+}
+
+.card-title {
+    color: crimson;
+}
