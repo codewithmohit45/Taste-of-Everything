@@ -7,16 +7,18 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { CategoryComponent } from './component/category/category.component';
 import { ItemComponent } from './component/item/item.component';
-import { CustomerService } from './service/customer.service';
+import { CustomerService } from './service/customer/customer.service';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeeComponent } from './component/employee/employee/employee.component'
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     CategoryComponent,
-    ItemComponent
+    ItemComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,

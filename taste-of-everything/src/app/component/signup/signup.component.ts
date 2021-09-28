@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Customer } from 'src/app/class/customer';
-import { CustomerService } from 'src/app/service/customer.service';
+import { Customer } from 'src/app/class/customer/customer';
+import { CustomerService } from 'src/app/service/customer/customer.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -39,11 +39,11 @@ export class SignupComponent implements OnInit {
   // }
 
   public addCustomer() {
-    this.service.addCustomer(this.customer);
-    this.customer = new Customer();
-    alert("Accout Create Successfully");
-    this.router.navigate(['/login']);
-
+    this.service.addCustomer(this.customer).subscribe(res => {
+      this.customer = new Customer();
+      alert("Accout Create Successfully");
+      this.router.navigate(['/login']);
+    });
   }
 
 }
