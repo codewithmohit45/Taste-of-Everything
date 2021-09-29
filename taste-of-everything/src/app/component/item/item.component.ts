@@ -11,7 +11,10 @@ import { ItemService } from 'src/app/service/item/item.service';
 export class ItemComponent implements OnInit {
   id: number;
   itemList: Item[];
-  constructor(private service: ItemService, private route: ActivatedRoute) { }
+  flag: boolean;
+  constructor(private service: ItemService, private route: ActivatedRoute) {
+    this.flag = true;
+  }
 
   ngOnInit() {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -19,10 +22,10 @@ export class ItemComponent implements OnInit {
     this.service.getItemByCategory(this.id).subscribe(res => {
       this.itemList = res;
     })
-
   }
 
-
-
+  changeFlag() {
+    this.flag = false;
+  }
 
 }

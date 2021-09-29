@@ -1,5 +1,9 @@
+import { Customer } from "../customer/customer";
+import { Item } from "../item/item";
+
 export class Cart {
     cartId: number;
-    customerId: number;
-    itemId: number;
+    customer: Customer;
+    item: Item;
+    quantity: number;
 }

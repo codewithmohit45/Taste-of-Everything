@@ -9,11 +9,12 @@
             <div class="container mt-lg-5">
                 <main class="text-center">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://source.unsplash.com/1600x900/?icecream,food" class="card-img-top" alt="...">
+                        <img src="{{item.itemImage}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h3 class="card-title">{{item.itemName}}</h3>
                             <h5 class="card-title">{{item.itemPrice}}</h5>
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                            <button class="btn btn-primary" *ngIf="flag" (click)="changeFlag()">Add to Cart</button>
+                            <app-modify-item-quantity *ngIf="!flag"></app-modify-item-quantity>
                         </div>
                     </div>
                 </main>
