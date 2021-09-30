@@ -9,4 +9,12 @@ export class Order {
     quantity: number;
     orderStatus: string;
     address: Address;
+
+    constructor(customer: Customer, item: Item, quantity: number, orderStatus: string, address: Address) {
+        this.customer = customer;
+        this.item = item;
+        this.quantity = quantity;
+        this.orderStatus = orderStatus;
+        this.address = address;
+    }
 }

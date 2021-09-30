@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
     if (this.loginType == 'customer') {
       this.customerService.checkCustomer(this.inputEmail, this.inputPassword).subscribe(res => {
         if (res != null) {
+          this.customerService.customer = res;
           this.customerService.isAuthenticated = true;
           this.customerService.isCustomerLogin = true;
           // sessionStorage.setItem('customerName', this.);

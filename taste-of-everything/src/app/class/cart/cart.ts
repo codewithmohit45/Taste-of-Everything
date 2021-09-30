@@ -6,4 +6,10 @@ export class Cart {
     customer: Customer;
     item: Item;
     quantity: number;
+
+    constructor(customer: Customer, item: Item, quantity: number) {
+        this.customer = customer;
+        this.item = item;
+        this.quantity = quantity;
+    }
 }

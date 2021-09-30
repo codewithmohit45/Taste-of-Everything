@@ -11,7 +11,9 @@ import { CustomerService } from './service/customer/customer.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeComponent } from './component/employee/employee/employee.component';
-import { ModifyItemQuantityComponent } from './component/modifyItemQuantity/modify-item-quantity/modify-item-quantity.component'
+import { EmployeeCategoryComponent } from './component/employee-category/employee-category.component';
+import { EmployeeItemComponent } from './component/employee-item/employee-item.component';
+import { OrderStatusComponent } from './component/order-status/order-status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { ModifyItemQuantityComponent } from './component/modifyItemQuantity/modi
     CategoryComponent,
     ItemComponent,
     EmployeeComponent,
-    ModifyItemQuantityComponent,
+    EmployeeCategoryComponent,
+    EmployeeItemComponent,
+    OrderStatusComponent,
   ],
   imports: [
     BrowserModule,

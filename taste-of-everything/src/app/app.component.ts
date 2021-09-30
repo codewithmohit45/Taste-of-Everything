@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerService } from './service/customer/customer.service';
 import { EmployeeService } from './service/employee/employee.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,4 +18,6 @@ export class AppComponent {
     //sessionStorage.removeItem("customerName");
     this.router.navigate(["/login"]);
   }
+
+
 }

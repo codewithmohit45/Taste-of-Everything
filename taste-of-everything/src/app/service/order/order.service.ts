@@ -17,7 +17,7 @@ export class OrderService {
   }
 
   public updateOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>(this.url, order);
+    return this.http.put<Order>(this.url, order);
   }
 
   public getOrderByCustomerId(customerId: number): Observable<Order[]> {

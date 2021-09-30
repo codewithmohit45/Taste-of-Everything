@@ -1,7 +1,85 @@
 <div class="container">
 
     <div class="container text-center mt-lg-5">
+
         <h3 style="color:darkred">ItemList</h3>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" (click)="viewCart()" data-bs-toggle="modal" data-bs-target="#viewCart">
+      View Cart
+    </button>
+        <!-- <button routerLink="/address" class="btn btn-primary" style="margin-left: 20px;">Checkout</button> -->
+        <!-- Modal -->
+        <div class="modal fade" id="viewCart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h4 style="color:red">Item Name</h4>
+                            </div>
+                            <div class="col-sm-4">
+                                <h4 style="color:green">Item Price</h4>
+                            </div>
+                            <div class="col-sm-4">
+                                <h4>Quantity</h4>
+                            </div>
+                        </div>
+                        <div class="container" *ngFor="let cart of cartList">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h4 style="color:blue">{{cart.item.itemName}}</h4>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h4 style="color:chartreuse">{{cart.item.itemPrice}}</h4>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h4 style="color:brown">{{cart.quantity}}</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#address" class="btn btn-primary" data-bs-dismiss="modal">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="address" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <h4 style="color:red">Enter Your Address</h4>
+                        </div>
+                        <div class="container">
+                            <div class="input-group">
+                                <textarea class="form-control" aria-label="With textarea" [(ngModel)]="orderAddress.address"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="order()" data-bs-dismiss="modal">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
     </div>
 
     <div class="row">
@@ -13,8 +91,21 @@
                         <div class="card-body">
                             <h3 class="card-title">{{item.itemName}}</h3>
                             <h5 class="card-title">{{item.itemPrice}}</h5>
-                            <button class="btn btn-primary" *ngIf="flag" (click)="changeFlag()">Add to Cart</button>
-                            <app-modify-item-quantity *ngIf="!flag"></app-modify-item-quantity>
+                            <button class="btn btn-primary" *ngIf="!(itemIdList.includes(item.itemId))" (click)="changeFlag(item)">Add
+                to Cart</button>
+
+                            <div class="container row" *ngIf="itemIdList.includes(item.itemId)">
+                                <div class="col-sm-4">
+                                    <button class="btn btn-primary" (click)="minus(item.itemId)">-</button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h4>{{customerCart[item.itemId]}}</h4>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-primary" (click)="plus(item.itemId)">+</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </main>

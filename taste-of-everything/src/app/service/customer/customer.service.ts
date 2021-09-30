@@ -12,12 +12,13 @@ export class CustomerService {
   // validCustomer: Customer[];
   isAuthenticated: boolean;
   isCustomerLogin: boolean;
-
+  customer: Customer;
   private url: string;
   constructor(private http: HttpClient) {
     this.url = "http://localhost:8080/customer";
     this.isAuthenticated = false;
     this.isCustomerLogin = false;
+
 
   }
 

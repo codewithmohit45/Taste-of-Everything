@@ -20,11 +20,18 @@ export class CartService {
     return this.http.put<Cart[]>(this.url, cart);
   }
   /// find customer Id 
-  public getAllItemFromCart(): Observable<Cart[]> {
-    return this.http.get<Cart[]>(this.url + "/customerId/");
+  public getAllItemFromCart(customerId: number): Observable<Cart[]> {
+    return this.http.get<Cart[]>(this.url + "/customerId/" + customerId);
   }
 
   public deleteCart(id: number) {
-    this.http.delete(this.url + "/{id}");
+    this.http.delete(this.url + "/" + id);
+  }
+
+  public deleteCartByCustomerId(customerId: number) {
+    console.log(this.url + "/customerId/" + customerId);
+
+    this.http.delete(this.url + "/customerId/" + customerId).subscribe();
+
   }
 }

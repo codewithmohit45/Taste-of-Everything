@@ -22,20 +22,7 @@
             </div>
 
             <!-- <div *ngIf="customerService.isCustomerLogin"> -->
-            <div>
-                <button type="button " class="btn btn-light text-primary mx-2 rounded-0 " id="popcart " data-container="body " data-toggle="popover " data-placement="bottom " data-html="true " data-content=" ">
-          <i class="fa fa-shopping-cart "></i><b> Cart </b>(<span id="cart ">0</span>)
-        </button>
 
-
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Bottom popover">
-          Popover on bottom
-        </button>
-
-
-
-
-            </div>
             <div *ngIf="customerService.isAuthenticated" class="text-end">
                 <button (click)="logout()" class="btn btn-outline-light me-2 ">Log Out</button>
             </div>
