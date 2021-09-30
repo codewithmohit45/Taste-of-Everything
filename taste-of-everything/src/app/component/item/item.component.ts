@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Key } from 'readline';
 import { Address } from 'src/app/class/address/address';
 import { Cart } from 'src/app/class/cart/cart';
 import { Customer } from 'src/app/class/customer/customer';
