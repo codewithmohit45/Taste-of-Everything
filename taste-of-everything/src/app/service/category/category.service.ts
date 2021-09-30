@@ -30,7 +30,11 @@ export class CategoryService {
     return this.http.get<Category[]>(this.url + "/categoryName/" + categoryName);
   }
 
+  public getCategoryById(id: number): Observable<Category> {
+    return this.http.get<Category>(this.url + "/" + id);
+  }
+
   public deleteCategory(id: number) {
-    this.http.delete(this.url + "/{id}");
+    this.http.delete(this.url + "/" + id);
   }
 }

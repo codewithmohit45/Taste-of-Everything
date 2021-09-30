@@ -12,7 +12,7 @@
                 <li><a routerLink="" class="nav-link px-2 text-white">About</a></li>
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" *ngIf="customerService.isCustomerLogin">
                 <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
             </form>
 
@@ -21,11 +21,8 @@
                 <a routerLink="/signup" class="btn btn-warning ">Sign-up</a>
             </div>
 
-            <div *ngIf="customerService.isCustomerLogin">
-                <button type="button " class="btn btn-light text-primary mx-2 rounded-0 " id="popcart " data-container="body " data-toggle="popover " data-placement="bottom " data-html="true " data-content=" ">
-          <i class="fa fa-shopping-cart "></i><b> Cart </b>(<span id="cart ">0</span>)
-        </button>
-            </div>
+            <!-- <div *ngIf="customerService.isCustomerLogin"> -->
+
             <div *ngIf="customerService.isAuthenticated" class="text-end">
                 <button (click)="logout()" class="btn btn-outline-light me-2 ">Log Out</button>
             </div>

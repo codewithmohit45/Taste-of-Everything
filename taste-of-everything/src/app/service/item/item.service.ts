@@ -7,10 +7,11 @@ import { Item } from 'src/app/class/item/item';
   providedIn: 'root'
 })
 export class ItemService {
-
+  itemIdList: Array<number>;
   private url: string;
   constructor(private http: HttpClient) {
     this.url = "http://localhost:8080/item";
+    this.itemIdList = [];
   }
 
   public addItem(item: Item): Observable<Item> {
@@ -22,7 +23,7 @@ export class ItemService {
   }
 
   public getAllItems(): Observable<Item[]> {
-    return this.http.get<Item[]>(this.url + "/s");
+    return this.http.get<Item[]>(this.url + "s");
   }
 
   public getItemByCategory(id: number): Observable<Item[]> {
