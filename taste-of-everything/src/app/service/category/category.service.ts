@@ -31,10 +31,10 @@ export class CategoryService {
   }
 
   public getCategoryById(id: number): Observable<Category> {
-    return this.http.get<Category>(this.url + "/" + id);
+    return this.http.get<Category>(this.url + "/categoryId/" + id);
   }
 
   public deleteCategory(id: number) {
-    this.http.delete(this.url + "/" + id);
+    this.http.delete(this.url + "/" + id).subscribe();
   }
 }

@@ -7,6 +7,7 @@ import { EmployeeItemComponent } from './component/employee-item/employee-item.c
 import { EmployeeComponent } from './component/employee/employee/employee.component';
 import { ItemComponent } from './component/item/item.component';
 import { LoginComponent } from './component/login/login.component';
+import { OrderHistoryComponent } from './component/order-history/order-history.component';
 import { OrderStatusComponent } from './component/order-status/order-status.component';
 import { SignupComponent } from './component/signup/signup.component';
 
@@ -15,11 +16,12 @@ const routes: Routes = [
   { path: '', component: CategoryComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'orderHistory', component: OrderHistoryComponent, canActivate: [AuthGuard] },
   { path: 'item/:id', component: ItemComponent, canActivate: [AuthGuard] },
-  { path: 'employee/home', component: EmployeeComponent },
-  { path: 'employee/category', component: EmployeeCategoryComponent },
-  { path: 'employee/item', component: EmployeeItemComponent },
-  { path: 'employee/order', component: OrderStatusComponent }
+  { path: 'employee/home', component: EmployeeComponent, canActivate: [AuthGuard] },
+  { path: 'employee/category', component: EmployeeCategoryComponent, canActivate: [AuthGuard] },
+  { path: 'employee/item', component: EmployeeItemComponent, canActivate: [AuthGuard] },
+  { path: 'employee/order', component: OrderStatusComponent, canActivate: [AuthGuard] }
 
 ];
 

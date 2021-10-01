@@ -17,4 +17,5 @@ export class Order {
         this.orderStatus = orderStatus;
         this.address = address;
     }
+
 }

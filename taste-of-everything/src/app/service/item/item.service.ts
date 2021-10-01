@@ -31,6 +31,6 @@ export class ItemService {
   }
 
   public deleteItem(id: number) {
-    this.http.delete(this.url + "/{id}");
+    this.http.delete(this.url + "/" + id).subscribe();
   }
 }

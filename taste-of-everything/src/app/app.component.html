@@ -24,6 +24,9 @@
             <!-- <div *ngIf="customerService.isCustomerLogin"> -->
 
             <div *ngIf="customerService.isAuthenticated" class="text-end">
+                <!-- Button trigger modal -->
+
+                <button routerLink="/orderHistory" class="btn btn-outline-light me-2 ">Order History</button>
                 <button (click)="logout()" class="btn btn-outline-light me-2 ">Log Out</button>
             </div>
         </div>

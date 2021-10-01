@@ -13,14 +13,19 @@ import { ItemService } from 'src/app/service/item/item.service';
 export class EmployeeItemComponent implements OnInit {
   itemList: Item[];
   item: Item;
+  itemId: number;
   categoryId: number;
-  category: Category;
+
   constructor(private itemService: ItemService, private categoryService: CategoryService, private router: Router) {
     this.itemList = [];
     this.item = new Item();
   }
 
   ngOnInit() {
+    this.getAllItem();
+  }
+
+  getAllItem() {
     this.itemService.getAllItems().subscribe(res => {
       this.itemList = res;
     })
@@ -28,21 +33,25 @@ export class EmployeeItemComponent implements OnInit {
 
   addItem() {
     this.categoryService.getCategoryById(this.categoryId).subscribe(res => {
-      this.category = res;
+      this.item.category = res;
+      this.itemService.addItem(this.item).subscribe(res => {
+        alert("Item add Successfully");
+        this.getAllItem();
+      })
     });
-    this.item.category = this.category;
-    this.itemService.addItem(this.item).subscribe(res => {
-      alert("Item add Successfully");
-      this.router.navigate(["/employee/home"]);
-    })
   }
 
   editItem() {
 
   }
 
+  setItemId(itemId: number) {
+    this.itemId = itemId;
+  }
   deleteItem() {
-
+    this.itemService.deleteItem(this.itemId);
+    alert("Item delete Successfully");
+    this.router.navigate(["/employee/home"]);
   }
 
 }

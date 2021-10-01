@@ -94,7 +94,6 @@ export class ItemComponent implements OnInit {
 
   getAllItemFromCart() {
     this.cartService.getAllItemFromCart(this.customer.customerId).subscribe(res => {
-      console.log(res);
       this.cartList = res;
     });
   }
@@ -108,7 +107,6 @@ export class ItemComponent implements OnInit {
           this.orderService.addOrder(this.customerOrder).subscribe(res => {
           });
         }
-        console.log("56++", this.customer.customerId);
         this.cartService.deleteCartByCustomerId(this.customer.customerId);
         alert("Ordered Successfully Done");
         this.router.navigate(["/"]);

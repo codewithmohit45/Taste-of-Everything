@@ -16,14 +16,15 @@ export class OrderStatusComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.orderService.getOrderByStatus("ordered").subscribe(res => {
+    this.orderService.getOrderByStatus().subscribe(res => {
       this.orderList = res;
     })
   }
 
-  changeOrderStatus() {
-
-
+  changeOrderStatus(order: Order) {
+    alert("Update Successfully");
+    order.orderStatus = "Delivered";
+    this.orderService.updateOrder(order).subscribe();
   }
 
 }

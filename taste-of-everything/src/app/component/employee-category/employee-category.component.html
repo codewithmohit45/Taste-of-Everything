@@ -58,9 +58,9 @@
                 <td>{{category.categoryId}}</td>
                 <td>{{category.categoryName}}</td>
                 <td><img [src]="category.categoryImage" class="img-thumbnail" alt="..." width="100px" height="100px"></td>
-                <td><button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#editCategory">
+                <td><button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#editCategory" data-bs-dismiss="modal">
             Edit</button></td>
-                <td><button type="button" class="btn btn-danger mb-4" data-bs-toggle="modal" data-bs-target="#deleteCategory">
+                <td><button type="button" (click)="setCategoryId(category.categoryId)" class="btn btn-danger mb-4" data-bs-toggle="modal" data-bs-target="#deleteCategory" data-bs-dismiss="modal">
             Delete</button></td>
             </tr>
         </tbody>
