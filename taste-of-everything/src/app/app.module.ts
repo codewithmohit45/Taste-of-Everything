@@ -14,6 +14,7 @@ import { EmployeeComponent } from './component/employee/employee/employee.compon
 import { EmployeeCategoryComponent } from './component/employee-category/employee-category.component';
 import { EmployeeItemComponent } from './component/employee-item/employee-item.component';
 import { OrderStatusComponent } from './component/order-status/order-status.component';
+import { OrderHistoryComponent } from './component/order-history/order-history.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { OrderStatusComponent } from './component/order-status/order-status.comp
     EmployeeCategoryComponent,
     EmployeeItemComponent,
     OrderStatusComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     BrowserModule,

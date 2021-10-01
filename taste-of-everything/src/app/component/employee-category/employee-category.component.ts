@@ -11,6 +11,8 @@ import { CategoryService } from 'src/app/service/category/category.service';
 export class EmployeeCategoryComponent implements OnInit {
   categoryList: Category[];
   category: Category;
+  categoryId: number;
+
   constructor(private categoryService: CategoryService, private router: Router) {
     this.categoryList = [];
     this.category = new Category();
@@ -28,10 +30,11 @@ export class EmployeeCategoryComponent implements OnInit {
       this.router.navigate(["/employee/home"]);
     })
   }
-
-  deleteCategory(categoryId: number) {
-    console.log("++++++++++++", categoryId);
-    this.categoryService.deleteCategory(categoryId);
+  setCategoryId(categoryId: number) {
+    this.categoryId = categoryId;
+  }
+  deleteCategory() {
+    this.categoryService.deleteCategory(this.categoryId);
     alert("Category delete Successfully");
     this.router.navigate(["/employee/home"]);
   }

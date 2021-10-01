@@ -21,11 +21,11 @@ export class OrderService {
   }
 
   public getOrderByCustomerId(customerId: number): Observable<Order[]> {
-    return this.http.get<Order[]>(this.url + "/{id}");
+    return this.http.get<Order[]>(this.url + "/" + customerId);
   }
 
-  public getOrderByStatus(orderStatus: string): Observable<Order[]> {
-    return this.http.get<Order[]>("http://localhost:8080/employee/orderStatus/{orderStatus}");
+  public getOrderByStatus(): Observable<Order[]> {
+    return this.http.get<Order[]>("http://localhost:8080/employee/orderStatus/ordered");
   }
 
 }

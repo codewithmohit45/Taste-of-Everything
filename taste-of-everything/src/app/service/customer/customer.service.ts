@@ -41,10 +41,5 @@ export class CustomerService {
   public checkCustomer(email: string, password: string): Observable<Customer> {
     return this.http.get<Customer>(this.url + "/login/" + email + "/" + password);
   }
-  // public deleteCustomer(id: number) {
-  //   this.customerList = this.customerList.filter((customer) => customer.customerId !== id);
-  // }
-
-
 
 }
