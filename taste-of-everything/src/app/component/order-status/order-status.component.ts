@@ -22,7 +22,7 @@ export class OrderStatusComponent implements OnInit {
   }
 
   changeOrderStatus(order: Order) {
-    alert("Update Successfully");
+    alert("Updated Successfully");
     order.orderStatus = "Delivered";
     this.orderService.updateOrder(order).subscribe();
   }
